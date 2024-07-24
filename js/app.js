@@ -12,15 +12,27 @@ function adicionar() {
     
 }
 
+function sortear(){
+    let sorteio = document.querySelector('.prizeDraw__container')
+    amigosEmbaralhados = embaralharArray(amigos)
+    console.log (amigosEmbaralhados)
+
+    
+}
+
+
+// Função para embaralhar o array usando o algoritmo de Fisher-Yates
+function embaralharArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Troca os elementos
+    }
+    return array;
+}
 
 
 
 
 
-
-
-
-
-//sortear que sai com quem
 //mostrar esse sorteio na tela
 //zerar tudo para que começe novamente
