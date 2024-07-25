@@ -1,22 +1,23 @@
+//variaveis globais, necessarias em mais de uma function
 let nomesSorteio = document.querySelector('#lista-amigos');
 let sorteio = document.querySelector('#lista-sorteio');
 let amigos = [];
 
+//função responsavel por adicionar os nomes ao vetor que realizara o sorteio
 function adicionar() {
     let amigoDigitado = document.querySelector('#nome-amigo').value;
-    console.log(amigoDigitado);//teste
     amigos.push(amigoDigitado);//incremento do array
-    console.log(amigos);//teste
 
     nomesSorteio.textContent = amigos;
     document.querySelector('#nome-amigo').value = '';//zerar input
     
 }
 
+//função resposavel por embaralhar o vetor, realizar o sorteio e mostra-lo na tela
 function sortear(){
     amigosEmbaralhados = embaralharArray(amigos);
-    console.log (amigosEmbaralhados);
 
+    //for que gera a sequencia de quem tira quem, ja com o vetor embaralhado
     for(let i = 0; i < amigosEmbaralhados.length; i++){
         if(i == amigosEmbaralhados.length-1){
             sorteio.innerHTML = sorteio.innerHTML + `${amigosEmbaralhados[i]} --> ${amigosEmbaralhados[0]} <br>`;
@@ -29,6 +30,7 @@ function sortear(){
     
 }
 
+//função resposavel por reiniciar todos os campos para um novo sorteio
 function reiniciar() {
     sorteio.innerHTML = '';
     nomesSorteio.textContent = '';
@@ -44,10 +46,3 @@ function embaralharArray(array) {
     }
     return array;
 }
-
-
-
-
-
-//mostrar esse sorteio na tela
-//zerar tudo para que começe novamente
