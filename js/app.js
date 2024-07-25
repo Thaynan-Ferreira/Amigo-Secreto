@@ -23,18 +23,22 @@ function adicionar() {
 
 //função resposavel por embaralhar o vetor, realizar o sorteio e mostra-lo na tela
 function sortear(){
-    amigosEmbaralhados = embaralharArray(amigos);
 
-    //for que gera a sequencia de quem tira quem, ja com o vetor embaralhado
-    for(let i = 0; i < amigosEmbaralhados.length; i++){
-        if(i == amigosEmbaralhados.length-1){
-            sorteio.innerHTML = sorteio.innerHTML + `${amigosEmbaralhados[i]} --> ${amigosEmbaralhados[0]} <br>`;
-        }else{
-            sorteio.innerHTML = sorteio.innerHTML + `${amigosEmbaralhados[i]} --> ${amigosEmbaralhados[i+1]} <br>`;
+    if(amigos.length < 4){
+        alert('Poucos nomes para um amigo secreto, digite mais por favor.')
+    } else{
+        amigosEmbaralhados = embaralharArray(amigos);
+
+        //for que gera a sequencia de quem tira quem, ja com o vetor embaralhado
+        for(let i = 0; i < amigosEmbaralhados.length; i++){
+            if(i == amigosEmbaralhados.length-1){
+                sorteio.innerHTML = sorteio.innerHTML + `${amigosEmbaralhados[i]} --> ${amigosEmbaralhados[0]} <br>`;
+            }else{
+                sorteio.innerHTML = sorteio.innerHTML + `${amigosEmbaralhados[i]} --> ${amigosEmbaralhados[i+1]} <br>`;
+            }            
         }
-
-        
     }
+    
     
 }
 
