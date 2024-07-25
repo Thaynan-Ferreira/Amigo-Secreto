@@ -25,7 +25,7 @@ function adicionar() {
 function sortear(){
 
     if(amigos.length < 4){
-        alert('Poucos nomes para um amigo secreto, digite mais por favor.')
+        alert('Adicione ao menos 4 nomes.')
     } else{
         amigosEmbaralhados = embaralharArray(amigos);
 
