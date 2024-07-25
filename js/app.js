@@ -6,9 +6,17 @@ let amigos = [];
 //função responsavel por adicionar os nomes ao vetor que realizara o sorteio
 function adicionar() {
     let amigoDigitado = document.querySelector('#nome-amigo').value;
-    amigos.push(amigoDigitado);//incremento do array
+    if (amigos.includes(amigoDigitado)){
+        alert('Esse nome ja foi adicionado, adicione outro');
+    }
+    else if (amigoDigitado == ''){
+        alert('Digite um valor');
+    } else{
+        amigos.push(amigoDigitado);//incremento do array
 
-    nomesSorteio.textContent = amigos;
+        nomesSorteio.textContent = amigos;
+    }
+    
     document.querySelector('#nome-amigo').value = '';//zerar input
     
 }
