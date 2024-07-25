@@ -30,7 +30,9 @@ function sortear(){
 }
 
 function reiniciar() {
-
+    sorteio.innerHTML = '';
+    nomesSorteio.textContent = '';
+    amigos = []
 }
 
 
