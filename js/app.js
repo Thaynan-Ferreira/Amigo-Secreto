@@ -1,9 +1,10 @@
+let nomesSorteio = document.querySelector('#lista-amigos');
+let sorteio = document.querySelector('#lista-sorteio');
 let amigos = [];
+
 function adicionar() {
     let amigoDigitado = document.querySelector('#nome-amigo').value;
-    let nomesSorteio = document.querySelector('#lista-amigos');
     console.log(amigoDigitado);//teste
-
     amigos.push(amigoDigitado);//incremento do array
     console.log(amigos);//teste
 
@@ -13,7 +14,6 @@ function adicionar() {
 }
 
 function sortear(){
-    let sorteio = document.querySelector('#lista-sorteio');
     amigosEmbaralhados = embaralharArray(amigos);
     console.log (amigosEmbaralhados);
 
@@ -26,9 +26,11 @@ function sortear(){
 
         
     }
-
-
     
+}
+
+function reiniciar() {
+
 }
 
 
